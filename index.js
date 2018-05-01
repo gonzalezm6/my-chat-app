@@ -10,8 +10,11 @@ var server = app.listen(process.env.PORT || 3000, function(){
 });
 
 //Static files
-app.use(express.static('public'));
+app.use(express.static(__dirname + 'public'));
 
+app.get("/", function(req, res){
+        res.render("index");
+});
 //Socket setup
 var io = socket();
 

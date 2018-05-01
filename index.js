@@ -13,7 +13,7 @@ var server = app.listen(process.env.PORT || 3000, function(){
 app.use(express.static('public'));
 
 //Socket setup
-var io = socket(server);
+var io = socket();
 
 io.on('connection', function(socket){
     console.log('a new user connected', socket.id);
